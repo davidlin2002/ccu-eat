@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地圖 | CCU Eats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">CCU <span>Eats</span></a>
+    <div class="nav-toggle-group">
+      <button class="active">外送</button>
+      <button>外帶</button>
+    </div>
+    <div class="nav-location">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      國立中正大學・立刻
+    </div>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="搜尋 CCU Eats">
+    </div>
+    <div class="nav-actions">
+      <button class="btn-login">登入</button>
+    </div>
+  </nav>
+
+  <div class="map-layout">
+    <!-- Sidebar List -->
+    <div class="map-sidebar" id="mapSidebar">
+      <h2>附近餐廳</h2>
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.5!2d120.4847!3d23.5647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e946f58d2f5e7%3A0x4d2e9a9b2e6e7c3a!2z5ZyL56uL5Lit5q2j5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1700000000000!5m2!1szh-TW!2stw"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('mapSidebar');
+      const listHTML = restaurants.map(r => `
+        <a href="detail.html?id=${r.id}" class="map-restaurant-item">
+          <img src="${r.image}" alt="${r.name}" loading="lazy">
+          <div class="map-restaurant-info">
+            <h3>${r.name}</h3>
+            <div class="rating">★ ${r.rating} (${r.reviews}+)・${r.deliveryTime}</div>
+            <div class="address">${r.address}</div>
+          </div>
+        </a>
+      `).join('');
+      sidebar.innerHTML = '<h2>附近餐廳</h2>' + listHTML;
+    });
+  </script>
+</body>
+</html>

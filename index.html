@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中正大學美食 | CCU Eats</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" class="navbar-logo">CCU <span>Eats</span></a>
+    <div class="nav-toggle-group">
+      <button class="active">外送</button>
+      <button>外帶</button>
+    </div>
+    <div class="nav-location">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+      國立中正大學・立刻
+    </div>
+    <div class="nav-search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" placeholder="搜尋 CCU Eats" id="searchInput">
+    </div>
+    <div class="nav-actions">
+      <button class="btn-login">登入</button>
+    </div>
+  </nav>
+
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <a href="index.html" class="sidebar-item active">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg>
+        首頁
+      </a>
+      <a href="map.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" fill="currentColor"/></svg>
+        地圖
+      </a>
+      <a href="about.html" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/></svg>
+        關於我們
+      </a>
+      <div class="sidebar-divider"></div>
+      <a href="#" class="sidebar-item">
+        <svg viewBox="0 0 24 24"><path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58.55 0 1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41 0-.55-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z" fill="currentColor"/></svg>
+        優惠
+      </a>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+      <!-- Category Icons -->
+      <div class="category-row" id="categoryRow"></div>
+
+      <!-- Filter Tags -->
+      <div class="filter-row" id="filterRow">
+        <button class="filter-tag" data-filter="promotion">🏷️ 優惠方案</button>
+        <button class="filter-tag" data-filter="rating-high">🏆 評分最高</button>
+        <button class="filter-tag" data-filter="fast">⚡ 不到 30 分鐘</button>
+        <button class="filter-tag" data-filter="price-low">💰 平價</button>
+      </div>
+
+      <!-- Promotions -->
+      <div class="promo-section">
+        <div class="promo-scroll" id="promoScroll"></div>
+      </div>
+
+      <!-- Top Rated -->
+      <div class="section-header">
+        <div>
+          <h2>評分最高</h2>
+          <p>評價優良，服務出色</p>
+        </div>
+        <span class="view-all" id="viewAllBtn">查看全部</span>
+      </div>
+
+      <div class="restaurant-grid" id="restaurantGrid"></div>
+    </main>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
