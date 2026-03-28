@@ -834,3 +834,22 @@ button {
     height: 200px;
   }
 }
+
+/* ===== SEO Hero Section ===== */
+.seo-hero {
+  margin-bottom: 20px;
+}
+
+.seo-hero h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.seo-hero p {
+  font-size: 14px;
+  color: #545454;
+  line-height: 1.7;
+  max-width: 680px;
+}

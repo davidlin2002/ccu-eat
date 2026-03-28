@@ -3,10 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>中正大學美食 | CCU Eats</title>
+  <title>中正大學美食推薦 | CCU Eats — 嘉義民雄校園周邊餐廳外送外帶</title>
+  <meta name="description" content="CCU Eats 收錄國立中正大學周邊超過 12 間人氣餐廳，涵蓋早餐、便當、火鍋、飲料等分類，提供評價、菜單、外送時間與優惠資訊，幫你快速找到好吃的！">
+  <meta name="keywords" content="中正大學美食,中正大學餐廳,民雄美食,CCU Eats,中正大學外送,中正大學外帶,嘉義民雄餐廳推薦">
+  <link rel="canonical" href="https://davidlin2002.github.io/ccu-eat/index.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="中正大學美食推薦 | CCU Eats">
+  <meta property="og:description" content="收錄中正大學周邊 12+ 間人氣餐廳，早餐、便當、火鍋、飲料通通有，附評價、菜單與外送資訊。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://davidlin2002.github.io/ccu-eat/index.html">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="CCU Eats">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Schema.org 結構化資料 — WebSite + ItemList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CCU Eats",
+    "url": "https://davidlin2002.github.io/ccu-eat/",
+    "description": "國立中正大學周邊美食探索平台，收錄嘉義民雄校園附近人氣餐廳的評價、菜單與外送資訊。",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://davidlin2002.github.io/ccu-eat/index.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -54,6 +82,16 @@
 
     <!-- Main -->
     <main class="main-content">
+      <!-- SEO Hero Section -->
+      <section class="seo-hero">
+        <h1>中正大學美食推薦 — 校園周邊餐廳一次看</h1>
+        <p>
+          CCU Eats 精選國立中正大學（嘉義民雄）周邊超過 12 間人氣餐廳，
+          從早餐、便當、火鍋到手搖飲料，涵蓋外送與外帶選項。
+          不管你是趕著上課想快速解決一餐，還是想跟朋友聚餐慶祝，都能在這裡找到最適合的選擇。
+        </p>
+      </section>
+
       <!-- Category Icons -->
       <div class="category-row" id="categoryRow"></div>
 
@@ -82,6 +120,22 @@
       <div class="restaurant-grid" id="restaurantGrid"></div>
     </main>
   </div>
+
+  <!-- noscript 內容讓搜尋引擎也能讀到餐廳資訊 -->
+  <noscript>
+    <section style="padding:20px 40px;">
+      <h2>中正大學附近熱門餐廳</h2>
+      <ul>
+        <li><strong>布格早午餐</strong> — 早餐・★4.7・嘉義縣民雄鄉大學路一段（大吃後方）</li>
+        <li><strong>早餐好樂</strong> — 早餐・★4.3・嘉義縣民雄鄉復農路89-2號</li>
+        <li><strong>食在好味</strong> — 便當・嘉義縣民雄鄉三興村</li>
+        <li><strong>媽祖廟口滷味</strong> — 小吃・嘉義縣民雄鄉中樂路</li>
+        <li><strong>鮮茶道</strong> — 飲料・嘉義縣民雄鄉大學路一段</li>
+        <li><strong>正忠排骨飯</strong> — 便當・嘉義縣民雄鄉</li>
+      </ul>
+      <p>更多餐廳請啟用 JavaScript 以獲得完整體驗。</p>
+    </section>
+  </noscript>
 
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>

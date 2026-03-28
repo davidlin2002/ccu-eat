@@ -13,8 +13,52 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  // Set page title
-  document.title = `${restaurant.name} | CCU Eats`;
+  // Set page title & meta
+  document.title = `${restaurant.name} — 菜單、評價與外送 | CCU Eats 中正大學美食`;
+  document.querySelector('meta[name="description"]').setAttribute('content',
+    `${restaurant.name}：${restaurant.description.substring(0, 100)}。查看完整菜單、${restaurant.reviews}+ 則評論、營業時間與外送資訊。`
+  );
+
+  // Inject Restaurant Schema (JSON-LD)
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": restaurant.name,
+    "image": restaurant.image,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": restaurant.address,
+      "addressLocality": "民雄鄉",
+      "addressRegion": "嘉義縣",
+      "addressCountry": "TW"
+    },
+    "telephone": restaurant.phone,
+    "servesCuisine": restaurant.category,
+    "priceRange": restaurant.priceRange,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": restaurant.rating,
+      "reviewCount": restaurant.reviews,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "openingHours": restaurant.hours,
+    "url": `https://davidlin2002.github.io/ccu-eat/detail.html?id=${restaurant.id}`,
+    "menu": restaurant.menu.map(item => ({
+      "@type": "MenuItem",
+      "name": item.name,
+      "description": item.description,
+      "offers": {
+        "@type": "Offer",
+        "price": item.price,
+        "priceCurrency": "TWD"
+      }
+    }))
+  };
+  const scriptTag = document.createElement('script');
+  scriptTag.type = 'application/ld+json';
+  scriptTag.textContent = JSON.stringify(schema);
+  document.head.appendChild(scriptTag);
 
   // Hero image
   document.getElementById('detailHero').src = restaurant.image;
